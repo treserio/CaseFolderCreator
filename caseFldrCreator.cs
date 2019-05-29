@@ -153,16 +153,16 @@ namespace folderCreate
                 CopyFolders(srcDir, destDir);
                 Console.WriteLine($@"Folders for G:\Cases\{newName} have been created");
 
-                // Create Folder \\HOLDENDATA\CaseMap\{caseName} and create shortcut for it in \\HOLDEN-FS01\Common\Cases\{newName}
-                Directory.CreateDirectory($@"\\HOLDENDATA\CaseMap\{caseName}");
+                // Create Folder \\Holden-FS01\CaseMap\{caseName} and create shortcut for it in \\HOLDEN-FS01\Common\Cases\{newName}
+                Directory.CreateDirectory($@"\\HOLDEN-FS01\CaseMap\{caseName}");
                 Console.WriteLine($@"The K:\{caseName} folder has been created");
 
                 // create shortcut to "\\HOLDEN-FS01\Common\Cases\{newName}\5 Medical Records (Original)\Medical Billing Affidavits" in...
                 // \\HOLDEN-FS01\Common\Cases\{newName}\3 Pleadings
                 ShortcutBuilder(Path.Combine(destDir, @"5 Medical Records (Original)\Medical Billing Affidavits"), Path.Combine(destDir, @"3 Pleadings\"));
 
-                // create shortcut to \\HOLDENDATA\CaseMap\{caseName} folder inside \\HOLDEN-FS01\Common\Cases\{newName}\
-                ShortcutBuilder($@"\\HOLDENDATA\CaseMap\{caseName}", destDir);
+                // create shortcut to \\Holden-FS01\CaseMap\{caseName} folder inside \\HOLDEN-FS01\Common\Cases\{newName}\
+                ShortcutBuilder($@"\\HOLDEN-FS01\CaseMap\{caseName}", destDir);
                 Console.WriteLine("All shortcuts have been established");
 
                 // Create icacls process command strings
